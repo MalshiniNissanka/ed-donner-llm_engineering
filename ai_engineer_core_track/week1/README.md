@@ -5,7 +5,7 @@ Completed end-of-week-1 exercise from Ed Donner's LLM Engineering course.
 The notebook takes a technical question (here: a short Python snippet) and returns an explanation from:
 
 1. **GPT-4o-mini** via the OpenAI API, with streaming
-2. **Llama 3.2** via a local Ollama server (OpenAI-compatible endpoint)
+2. **qwen2.5:0.5b** (~400MB) via a local Ollama server (OpenAI-compatible endpoint)
 
 ## Setup
 
@@ -20,10 +20,8 @@ The notebook takes a technical question (here: a short Python snippet) and retur
 
    ```bash
    ollama serve
-   ollama pull llama3.2
+   ollama pull qwen2.5:0.5b
    ```
-
-   On a smaller machine, use `llama3.2:1b` instead and change `MODEL_LLAMA` in the notebook.
 
 4. Open `week1 EXERCISE.ipynb` and run all cells.
 
