@@ -1,28 +1,32 @@
 # Week 1 exercise — technical question explainer
 
-Completed end-of-week-1 exercise from Ed Donner's LLM Engineering course.
+Takes a technical question and streams an explanation from each model:
 
-The notebook takes a technical question (here: a short Python snippet) and returns an explanation from:
+| Model | Provider |
+|---|---|
+| `gpt-4o-mini` | OpenAI |
+| `gemini-3.1-flash-lite` | Google |
+| `claude-haiku-4-5` | Anthropic |
+| `qwen2.5:0.5b` | Ollama, local |
 
-1. **GPT-4o-mini** via the OpenAI API, with streaming
-2. **qwen2.5:0.5b** (~400MB) via a local Ollama server (OpenAI-compatible endpoint)
+Every provider is called through the OpenAI client, since Google, Anthropic and Ollama all expose OpenAI-compatible endpoints. Only the `base_url` changes.
 
 ## Setup
 
-1. Copy the repo-root `.env.example` to `.env` and add your OpenAI API key.
-2. Install dependencies (from this folder or the repo root):
+Add your keys to `.env` in the repo root:
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+```
+OPENAI_API_KEY=...
+GOOGLE_API_KEY=...
+ANTHROPIC_API_KEY=...
+```
 
-3. Start Ollama and pull the model used in the notebook:
+Install dependencies and start the local model:
 
-   ```bash
-   ollama serve
-   ollama pull qwen2.5:0.5b
-   ```
+```bash
+pip install -r requirements.txt
+ollama serve
+ollama pull qwen2.5:0.5b
+```
 
-4. Open `week1 EXERCISE.ipynb` and run all cells.
-
-The notebook looks for `.env` in the current working directory and parent folders, so it works if you launch Jupyter from this `week1` folder or from the repo root.
+Then open `week1 EXERCISE.ipynb`, select the Python kernel, and Run All.

@@ -1,7 +1,6 @@
 # LLM Engineering — solutions
 
-Personal solutions for Ed Donner's LLM Engineering course, shared for review.
+Personal solutions for Ed Donner's LLM Engineering course.
 
-## Structure
-
-- `ai_engineer_core_track/week1/` — Week 1 exercise: technical question explainer (OpenAI + Ollama)
+- `ai_engineer_core_track/week1/week1 EXERCISE.ipynb`
+- `ai_engineer_core_track/week2/week2.ipynb`
